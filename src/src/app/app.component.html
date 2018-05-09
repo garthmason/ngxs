@@ -1,0 +1,23 @@
+<ng-container *ngIf="app$ | async as app">
+
+Name: <input #name />
+<button (click)="addItem(name.value)">Add Item </button>
+
+<br/>
+<br/>
+
+Items List:
+
+<div *ngFor="let item of app.items">
+  View Name: <span>{{item.name}}</span>
+</div>
+
+<br/>
+
+Items List 2 with updates:
+
+<div *ngFor="let item of app.items">
+  Update Name: <input [(ngModel)]="item.name" />
+</div>
+
+</ng-container>
